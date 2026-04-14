@@ -1,0 +1,199 @@
+// ============================================
+// FloodWatch SK — Design Tokens
+// Art direction: flood monitoring for Slovak villages
+// Tone: trustworthy, urgent-but-calm, civic/official
+// Palette: deep blue-teal (water), dark surfaces
+// Typography: Sora (display) + Inter (body)
+// Density: balanced
+// ============================================
+
+:root {
+  // --- Typography ---
+  --font-display: 'Sora', 'Helvetica Neue', sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+
+  // --- Type Scale (fluid clamp) ---
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+  --text-hero: clamp(3rem,     0.5rem  + 7vw,    8rem);
+
+  // --- Spacing (4px base) ---
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  // --- Border Radius ---
+  --radius-sm:   0.375rem;
+  --radius-md:   0.5rem;
+  --radius-lg:   0.75rem;
+  --radius-xl:   1rem;
+  --radius-full: 9999px;
+
+  // --- Transitions ---
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  // --- Content widths ---
+  --content-narrow:  640px;
+  --content-default: 960px;
+  --content-wide:    1200px;
+}
+
+// ============================================
+// LIGHT MODE
+// ============================================
+:root, [data-theme='light'] {
+  // Surfaces — cool blue-tinted whites
+  --color-bg:               #f4f6f9;
+  --color-surface:          #f8f9fb;
+  --color-surface-2:        #ffffff;
+  --color-surface-offset:   #edf0f5;
+  --color-surface-offset-2: #e4e8ef;
+  --color-surface-dynamic:  #d8dde7;
+  --color-divider:          #cdd3dd;
+  --color-border:           #c2c9d6;
+
+  // Text
+  --color-text:         #1a1f2e;
+  --color-text-muted:   #5a6478;
+  --color-text-faint:   #9aa3b4;
+  --color-text-inverse: #f8f9fb;
+
+  // Primary — deep water teal
+  --color-primary:           #0a6e7c;
+  --color-primary-hover:     #085a66;
+  --color-primary-active:    #064550;
+  --color-primary-highlight: #c8dfe3;
+
+  // Accent — alert blue (urgency)
+  --color-accent:           #1b4fa8;
+  --color-accent-hover:     #163f87;
+  --color-accent-active:    #102f66;
+  --color-accent-highlight: #ccd8f0;
+
+  // Warning — flood alert orange
+  --color-warning:           #b85c00;
+  --color-warning-hover:     #964a00;
+  --color-warning-active:    #733800;
+  --color-warning-highlight: #f0dcc8;
+
+  // Error
+  --color-error:           #c0392b;
+  --color-error-hover:     #a02f23;
+  --color-error-active:    #7a241b;
+  --color-error-highlight: #f5d0cc;
+
+  // Success
+  --color-success:           #2e7d32;
+  --color-success-hover:     #1b5e20;
+  --color-success-active:    #0a3d0e;
+  --color-success-highlight: #c8e6c9;
+
+  // Shadows
+  --shadow-sm: 0 1px 2px oklch(0.2 0.02 230 / 0.07);
+  --shadow-md: 0 4px 12px oklch(0.2 0.02 230 / 0.10);
+  --shadow-lg: 0 12px 32px oklch(0.2 0.02 230 / 0.14);
+}
+
+// ============================================
+// DARK MODE
+// ============================================
+[data-theme='dark'] {
+  --color-bg:               #0d1117;
+  --color-surface:          #131920;
+  --color-surface-2:        #182028;
+  --color-surface-offset:   #1a2230;
+  --color-surface-offset-2: #1e2838;
+  --color-surface-dynamic:  #253040;
+  --color-divider:          #2a3545;
+  --color-border:           #334155;
+
+  --color-text:         #e2e8f0;
+  --color-text-muted:   #8899aa;
+  --color-text-faint:   #4a5568;
+  --color-text-inverse: #0d1117;
+
+  --color-primary:           #2dd4bf;
+  --color-primary-hover:     #14b8a6;
+  --color-primary-active:    #0d9488;
+  --color-primary-highlight: #1a3035;
+
+  --color-accent:           #60a5fa;
+  --color-accent-hover:     #3b82f6;
+  --color-accent-active:    #2563eb;
+  --color-accent-highlight: #1e2d4a;
+
+  --color-warning:           #fb923c;
+  --color-warning-hover:     #f97316;
+  --color-warning-active:    #ea580c;
+  --color-warning-highlight: #3d2010;
+
+  --color-error:           #f87171;
+  --color-error-hover:     #ef4444;
+  --color-error-active:    #dc2626;
+  --color-error-highlight: #3d1515;
+
+  --color-success:           #4ade80;
+  --color-success-hover:     #22c55e;
+  --color-success-active:    #16a34a;
+  --color-success-highlight: #14301a;
+
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.45);
+}
+
+// System dark mode fallback
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --color-bg:               #0d1117;
+    --color-surface:          #131920;
+    --color-surface-2:        #182028;
+    --color-surface-offset:   #1a2230;
+    --color-surface-offset-2: #1e2838;
+    --color-surface-dynamic:  #253040;
+    --color-divider:          #2a3545;
+    --color-border:           #334155;
+    --color-text:         #e2e8f0;
+    --color-text-muted:   #8899aa;
+    --color-text-faint:   #4a5568;
+    --color-text-inverse: #0d1117;
+    --color-primary:           #2dd4bf;
+    --color-primary-hover:     #14b8a6;
+    --color-primary-active:    #0d9488;
+    --color-primary-highlight: #1a3035;
+    --color-accent:           #60a5fa;
+    --color-accent-hover:     #3b82f6;
+    --color-accent-active:    #2563eb;
+    --color-accent-highlight: #1e2d4a;
+    --color-warning:           #fb923c;
+    --color-warning-hover:     #f97316;
+    --color-warning-active:    #ea580c;
+    --color-warning-highlight: #3d2010;
+    --color-error:           #f87171;
+    --color-error-hover:     #ef4444;
+    --color-error-active:    #dc2626;
+    --color-error-highlight: #3d1515;
+    --color-success:           #4ade80;
+    --color-success-hover:     #22c55e;
+    --color-success-active:    #16a34a;
+    --color-success-highlight: #14301a;
+    --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+    --shadow-md: 0 4px 12px oklch(0 0 0 / 0.35);
+    --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.45);
+  }
+}
