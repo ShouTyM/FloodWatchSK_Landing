@@ -3,13 +3,14 @@
 
     <!-- Logo -->
     <a href="/" class="navbar__logo" aria-label="FloodWatch SK — domov">
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
-        <!-- Water wave shape -->
-        <path d="M6 20 Q9 16 12 20 Q15 24 18 20 Q21 16 24 20 Q25 21 26 20" stroke="white" stroke-width="2" stroke-linecap="round" fill="none"/>
-        <!-- Sensor/drop shape -->
-        <path d="M16 8 C16 8 11 14 11 17 A5 5 0 0 0 21 17 C21 14 16 8 16 8Z" fill="white" opacity="0.9"/>
-      </svg>
+      <img
+        src="/floodwatch-1.jpg"
+        alt="FloodWatch SK logo"
+        width="36"
+        height="36"
+        class="navbar__logo-img"
+        loading="eager"
+      />
       <span class="navbar__logo-text">FloodWatch <span>SK</span></span>
     </a>
 
@@ -22,30 +23,25 @@
 
     <!-- Right side actions -->
     <div class="navbar__actions">
-      <!-- Dark mode toggle -->
       <button
         class="navbar__theme-toggle"
         (click)="toggleTheme()"
         [attr.aria-label]="isDark() ? 'Prepínať na svetlý režim' : 'Prepínať na tmavý režim'"
       >
         @if (isDark()) {
-          <!-- Sun icon -->
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <circle cx="12" cy="12" r="5"/>
             <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
           </svg>
         } @else {
-          <!-- Moon icon -->
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
           </svg>
         }
       </button>
 
-      <!-- CTA button -->
       <a href="#contact" class="btn btn--primary">Zaujíma ma pilot</a>
 
-      <!-- Mobile hamburger -->
       <button
         class="navbar__hamburger"
         (click)="toggleMobileMenu()"
@@ -59,7 +55,6 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
   @if (isMobileMenuOpen()) {
     <div class="navbar__mobile-menu">
       @for (link of navLinks; track link.anchor) {
