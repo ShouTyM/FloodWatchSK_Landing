@@ -7,7 +7,6 @@
   padding-block: calc(var(--space-16) + var(--space-8)) var(--space-16);
   overflow: hidden;
 
-  // Subtle grid background
   &__bg-grid {
     position: absolute;
     inset: 0;
@@ -108,7 +107,9 @@
   &__stat {
     display: flex;
     flex-direction: column;
+    align-items: center;  // center each stat block
     gap: var(--space-1);
+    flex: 1;
   }
 
   &__stat-value {
@@ -127,6 +128,7 @@
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: 500;
+    text-align: center;
   }
 
   // --- Visual / photo ---
@@ -182,6 +184,22 @@
     font-weight: 600;
     color: var(--color-text);
     box-shadow: var(--shadow-md);
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      background var(--transition-interactive),
+      box-shadow var(--transition-interactive),
+      transform var(--transition-interactive);
+
+    &:hover {
+      background: oklch(from var(--color-bg) l c h / 0.98);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
   }
 
   &__image-badge-dot {
