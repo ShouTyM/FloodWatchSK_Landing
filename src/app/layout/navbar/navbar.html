@@ -40,7 +40,7 @@
         }
       </button>
 
-      <a href="#contact" class="btn btn--primary">Zaujíma ma pilot</a>
+      <a href="#contact" class="btn btn--primary">Kontaktuj nás</a>
 
       <button
         class="navbar__hamburger"
@@ -60,7 +60,7 @@
       @for (link of navLinks; track link.anchor) {
         <a [href]="link.anchor" class="navbar__mobile-link" (click)="closeMobileMenu()">{{ link.label }}</a>
       }
-      <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-4)" (click)="closeMobileMenu()">Zaujíma ma pilot</a>
+      <a href="#contact" class="btn btn--primary" style="margin-top: var(--space-4)" (click)="closeMobileMenu()">Kontaktuj nás</a>
     </div>
   }
 </header>
