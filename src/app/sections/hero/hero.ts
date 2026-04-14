@@ -9,9 +9,9 @@ import { CommonModule } from '@angular/common';
 })
 export class Hero implements OnInit, OnDestroy {
   readonly stats = [
-    { value: 93, suffix: '%', label: 'obcí zažilo povodeň' },
-    { value: 79, suffix: '%', label: 'má rizikové lokality' },
-    { value: 28, suffix: '', label: 'starostov v prieskume' },
+    { value: 42, suffix: '%', label: 'obcí so stredným až vysokým rizikom povodní' },
+    { value: 64, suffix: 'M€', label: 'škôd z povodní za roky 2020 – 2024' },
+    { value: 0, suffix: '', label: '— placeholder —' }, // TODO: doplniť 3. údaj
   ];
 
   animatedValues = signal<number[]>([0, 0, 0]);
