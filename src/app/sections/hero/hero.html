@@ -1,1 +1,72 @@
-<p>hero works!</p>
+<section class="hero" id="hero">
+  <div class="hero__bg-grid" aria-hidden="true"></div>
+
+  <div class="container hero__inner">
+
+    <!-- Left: text content -->
+    <div class="hero__content">
+      <span class="hero__badge">
+        <span class="hero__badge-dot"></span>
+        Pilot aktívny — Kluknava, Košický kraj
+      </span>
+
+      <h1 class="hero__headline">
+        Včasné varovanie<br />
+        pred povodňami<br />
+        <span class="hero__headline-accent">pre každú obec</span>
+      </h1>
+
+      <p class="hero__perex">
+        IoT senzory merajú hladinu vody v reálnom čase.
+        Starostovia dostanú SMS upozornenie skôr, ako je neskoro.
+      </p>
+
+      <div class="hero__actions">
+        <a href="#contact" class="btn btn--primary btn--lg">Mám záujem o pilot</a>
+        <a href="#how-it-works" class="btn btn--ghost btn--lg">Ako to funguje</a>
+      </div>
+
+      <!-- Stats -->
+      <div class="hero__stats">
+        @for (stat of stats; track stat.label; let i = $index) {
+          <div class="hero__stat">
+            <span class="hero__stat-value">
+              {{ animatedValues()[i] }}{{ stat.suffix }}
+            </span>
+            <span class="hero__stat-label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Right: sensor photo -->
+    <div class="hero__visual">
+      <div class="hero__image-wrap">
+        <img
+          src="/IMG_1949.jpg"
+          alt="FloodWatch SK senzor namontovaný na mostovom zábradlí"
+          width="600"
+          height="750"
+          loading="eager"
+          class="hero__image"
+        />
+        <div class="hero__image-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M12 1v3M12 20v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M1 12h3M20 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+          </svg>
+          <span>Živé meranie · Kluknava</span>
+          <span class="hero__image-badge-dot"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="hero__scroll-hint" aria-hidden="true">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
