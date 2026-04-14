@@ -11,7 +11,7 @@ export class Hero implements OnInit, OnDestroy {
   readonly stats = [
     { value: 42, suffix: '%', label: 'obcí so stredným až vysokým rizikom povodní' },
     { value: 64, suffix: 'M€', label: 'škôd z povodní za roky 2020 – 2024' },
-    { value: 0, suffix: '', label: '— placeholder —' }, // TODO: doplniť 3. údaj
+    { value: 24/7, suffix: '', label: 'monitorovanie' },
   ];
 
   animatedValues = signal<number[]>([0, 0, 0]);
