@@ -222,4 +222,14 @@
       font-size: var(--text-2xl);
     }
   }
+  &__showcase-img-wrap,
+  &__showcase-img {
+    outline: none;
+    border: none;
+
+    &:focus,
+    &:focus-visible {
+      outline: none;
+    }
+}
 }
