@@ -135,18 +135,36 @@
     line-height: 1.7;
   }
 
+  // ── Showcase divider ────────────────────────────
+  &__showcase-divider {
+    text-align: center;
+    margin-bottom: var(--space-12);
+
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    &.is-visible { opacity: 1; transform: translateY(0); }
+  }
+
   // ── Product showcase ────────────────────────────
   &__showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
-    margin-bottom: var(--space-16);
     align-items: center;
 
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.65s ease 0.2s, transform 0.65s ease 0.2s;
     &.is-visible { opacity: 1; transform: translateY(0); }
+
+    &--hw {
+      margin-bottom: var(--space-24);
+    }
+
+    &--sw {
+      margin-bottom: var(--space-16);
+    }
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
