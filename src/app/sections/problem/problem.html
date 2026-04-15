@@ -1,41 +1,52 @@
 <section class="problem" id="problem">
   <div class="container">
+
+    <!-- Header -->
     <div class="problem__header" #revealEl>
-      <span class="problem__eyebrow">Prečo na tom záleží</span>
-      <h2 class="problem__title">Povodne nie sú výnimka.<br /><span>Pre mnohé obce sú realita.</span></h2>
+      <span class="problem__eyebrow">Prečo FloodWatch SK vznikol</span>
+      <h2 class="problem__title">Voda nepočká<br /><span>na rozhodnutie.</span></h2>
       <p class="problem__subtitle">
-        Nový prieskum medzi samosprávami v Košickom kraji ukazuje, že problém nie je len v samotnej vode,
-        ale aj v tom, že dnešné monitorovanie je často neskoré, nejednotné a rozpočtovo citlivé.
+        Prívalové povodne sú na Slovensku každoročnou realitou.
+        V roku 2024 zasiahli všetkých osem krajov a spôsobili náklady štátu
+        na úrovni <strong>viac ako 19,5 milióna eur</strong>.
+        Podľa SHMÚ bude so zmenou klímy takýchto udalostí pribúdať.
       </p>
     </div>
 
-    <div class="problem__banner" #revealEl>
-      <div class="problem__banner-inner">
-        <span class="problem__banner-number">91,4 %</span>
-        <span class="problem__banner-text">
-          obcí v prieskume uviedlo, že už aspoň raz
-          <strong>zažili povodeň</strong>
-        </span>
-      </div>
-      <div class="problem__banner-source">Prieskum FloodWatch SK · 35 respondentov · marec 2026</div>
-    </div>
-
-    <div class="problem__cards">
-      @for (item of problems; track item.title; let i = $index) {
-        <div
-          class="problem__card"
-          [class.problem__card--mid]="i === 1"
-          #card
-        >
-          <div class="problem__card-icon" [innerHTML]="item.icon"></div>
-          <div class="problem__card-stat">
-            <span class="problem__card-stat-value">{{ item.stat }}</span>
-            <span class="problem__card-stat-label">{{ item.statLabel }}</span>
-          </div>
-          <h3 class="problem__card-title">{{ item.title }}</h3>
-          <p class="problem__card-desc">{{ item.description }}</p>
+    <!-- Impact strip -->
+    <div class="problem__impact-strip" #revealEl>
+      @for (item of impacts; track item.value; let i = $index) {
+        <div class="problem__impact-item" #impactItem>
+          <span class="problem__impact-value">{{ item.value }}</span>
+          <span class="problem__impact-label">{{ item.label }}</span>
+          <span class="problem__impact-sub">{{ item.sublabel }}</span>
         </div>
+        @if (i < impacts.length - 1) {
+          <div class="problem__impact-divider"></div>
+        }
       }
     </div>
+
+    <!-- Story block -->
+    <div class="problem__story" #revealEl>
+      <div class="problem__story-accent"></div>
+      <div class="problem__story-content">
+        <p class="problem__story-text">
+          Len v Košickom kraji zažilo povodeň <strong>91,4 % obcí</strong>, ktoré sa
+          zúčastnili nášho prieskumu. Zaplavené pivnice, odnesené cesty, zničené mosty.
+          V roku 2010 spôsobili povodne na východnom Slovensku škody
+          za <strong>156,8 milióna eur</strong>. Extrémne udalosti, ktoré sa kedysi
+          opakovali raz za desaťročie, dnes prichádzajú každé dva až tri roky.
+        </p>
+        <p class="problem__story-text problem__story-text--gap">
+          Napriek tomu väčšina obcí dodnes nemá systém, ktorý by starostu varoval
+          skôr, ako voda dorazí k prvým domom.
+        </p>
+        <div class="problem__story-sources">
+          MŽP SR · SHMÚ · Prieskum FloodWatch SK, marec 2026
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
