@@ -1,0 +1,46 @@
+<section class="problem" id="problem">
+  <div class="container">
+
+    <!-- Section header -->
+    <div class="problem__header" #revealEl>
+      <span class="problem__eyebrow">Prečo na tom záleží</span>
+      <h2 class="problem__title">Povodeň nečaká.<br /><span>Prečo by ste mali?</span></h2>
+      <p class="problem__subtitle">
+        Na Slovensku žije viac ako 400 000 ľudí v oblastiach ohrozených povodňami.
+        Napriek tomu väčšina obcí stále spolieha na manuálne pozorovanie a náhodné telefónne upozornenia.
+      </p>
+    </div>
+
+    <!-- Big stat banner -->
+    <div class="problem__banner" #revealEl>
+      <div class="problem__banner-inner">
+        <span class="problem__banner-number">93 %</span>
+        <span class="problem__banner-text">
+          starostov v Košickom kraji uviedlo, že ich obec
+          <strong>zažila povodeň</strong> za posledných 10 rokov
+        </span>
+      </div>
+      <div class="problem__banner-source">Prieskum FloodWatch SK · 28 starostov · 2025</div>
+    </div>
+
+    <!-- Problem cards — staggered layout -->
+    <div class="problem__cards">
+      @for (item of problems; track item.title; let i = $index) {
+        <div
+          class="problem__card"
+          [class.problem__card--mid]="i === 1"
+          #card
+        >
+          <div class="problem__card-icon" [innerHTML]="item.icon"></div>
+          <div class="problem__card-stat">
+            <span class="problem__card-stat-value">{{ item.stat }}</span>
+            <span class="problem__card-stat-label">{{ item.statLabel }}</span>
+          </div>
+          <h3 class="problem__card-title">{{ item.title }}</h3>
+          <p class="problem__card-desc">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+
+  </div>
+</section>
