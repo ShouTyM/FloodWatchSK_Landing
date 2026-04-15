@@ -2,7 +2,12 @@
   <div class="container navbar__inner">
 
     <!-- Logo -->
-    <a href="/" class="navbar__logo" aria-label="FloodWatch SK — domov">
+    <a
+      class="navbar__logo"
+      aria-label="FloodWatch SK — domov"
+      (click)="scrollToTop()"
+      style="cursor: pointer;"
+    >
       <img
         src="logo.svg"
         alt="FloodWatch SK logo"

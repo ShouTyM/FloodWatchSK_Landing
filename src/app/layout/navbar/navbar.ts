@@ -37,9 +37,14 @@ export class Navbar {
     this.isMobileMenuOpen.set(false);
   }
 
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.closeMobileMenu();
+  }
+
   navLinks = [
-    { label: 'Problém', anchor: '#problem' },
-    { label: 'Riešenie', anchor: '#solution' },
+    { label: 'Probl\u00e9m', anchor: '#problem' },
+    { label: 'Rie\u0161enie', anchor: '#solution' },
     { label: 'Funkcie', anchor: '#features' },
     { label: 'Pilot', anchor: '#pilot' },
     { label: 'Kontakt', anchor: '#contact' },
