@@ -15,7 +15,7 @@ export class Solution implements OnInit {
       number: '01',
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 4 5 4 9c0 5 8 13 8 13s8-8 8-13c0-4-3.6-7-8-7z"/><circle cx="12" cy="9" r="2.5"/></svg>`,
       title: 'Senzor meria',
-      description: 'Nezávislé zariadenie FloodWatch SK sa nainštaluje priamo pri rizikovom mieste — potoku, môstiku, nádrži. Každúch päť minút meria aktuálnu hladinu vody.'
+      description: 'Nezávislé zariadenie FloodWatch SK sa nainštaluje priamo pri rizikovom mieste — potoku, moste, nádrži. V nastaviteľnom časovom intervale meria aktuálnu hladinu vody.'
     },
     {
       number: '02',
@@ -27,7 +27,7 @@ export class Solution implements OnInit {
       number: '03',
       icon: `<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>`,
       title: 'Starosta dostane varovanie',
-      description: 'Keď hladina vody dosiahne nastavený práh, systém okamžite upozorní zodpovedné osoby. Nie až keď voda dorazí k domóm — ale v predstihu, keď je ešte čas konať.'
+      description: 'Keď hladina vody dosiahne nastavený prah, systém okamžite upozorní zodpovedné osoby aj občanov.'
     }
   ];
 
