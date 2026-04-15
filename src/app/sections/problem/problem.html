@@ -1,29 +1,25 @@
 <section class="problem" id="problem">
   <div class="container">
-
-    <!-- Section header -->
     <div class="problem__header" #revealEl>
       <span class="problem__eyebrow">Prečo na tom záleží</span>
-      <h2 class="problem__title">Povodeň nečaká.<br /><span>Prečo by ste mali?</span></h2>
+      <h2 class="problem__title">Povodne nie sú výnimka.<br /><span>Pre mnohé obce sú realita.</span></h2>
       <p class="problem__subtitle">
-        Na Slovensku žije viac ako 400 000 ľudí v oblastiach ohrozených povodňami.
-        Napriek tomu väčšina obcí stále spolieha na manuálne pozorovanie a náhodné telefónne upozornenia.
+        Nový prieskum medzi samosprávami v Košickom kraji ukazuje, že problém nie je len v samotnej vode,
+        ale aj v tom, že dnešné monitorovanie je často neskoré, nejednotné a rozpočtovo citlivé.
       </p>
     </div>
 
-    <!-- Big stat banner -->
     <div class="problem__banner" #revealEl>
       <div class="problem__banner-inner">
-        <span class="problem__banner-number">93 %</span>
+        <span class="problem__banner-number">91,4 %</span>
         <span class="problem__banner-text">
-          starostov v Košickom kraji uviedlo, že ich obec
-          <strong>zažila povodeň</strong> za posledných 10 rokov
+          obcí v prieskume uviedlo, že už aspoň raz
+          <strong>zažili povodeň</strong>
         </span>
       </div>
-      <div class="problem__banner-source">Prieskum FloodWatch SK · 28 starostov · 2025</div>
+      <div class="problem__banner-source">Prieskum FloodWatch SK · 35 respondentov · marec 2026</div>
     </div>
 
-    <!-- Problem cards — staggered layout -->
     <div class="problem__cards">
       @for (item of problems; track item.title; let i = $index) {
         <div
@@ -41,6 +37,5 @@
         </div>
       }
     </div>
-
   </div>
 </section>
