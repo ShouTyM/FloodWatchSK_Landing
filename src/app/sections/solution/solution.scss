@@ -52,7 +52,7 @@
   // ── Steps flow ──────────────────────────────────
   &__steps {
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 0;
     margin-bottom: var(--space-20);
 
@@ -94,7 +94,6 @@
     color: var(--color-text-faint);
     flex-shrink: 0;
     align-self: center;
-    margin-top: calc(-1 * var(--space-6));
 
     @media (max-width: 767px) {
       display: none;
@@ -139,10 +138,10 @@
   // ── Product showcase ────────────────────────────
   &__showcase {
     display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: var(--space-8);
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-12);
     margin-bottom: var(--space-16);
-    align-items: start;
+    align-items: center;
 
     opacity: 0;
     transform: translateY(24px);
@@ -151,14 +150,23 @@
 
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
+
+      &.solution__showcase--sw .solution__showcase-img-wrap { order: -1; }
     }
   }
 
-  &__showcase-device,
-  &__showcase-dashboard {
+  &__showcase-text {
     display: flex;
     flex-direction: column;
     gap: var(--space-4);
+  }
+
+  &__showcase-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
   }
 
   &__showcase-label {
@@ -173,12 +181,14 @@
   &__showcase-img-wrap {
     border-radius: var(--radius-xl);
     overflow: hidden;
-    border: 1px solid var(--color-border);
-    background: var(--color-surface-offset);
-    box-shadow: var(--shadow-md);
+    background: transparent;
+    border: none;
+    outline: none;
 
     &--screen {
       border-radius: var(--radius-lg);
+      border: 1px solid var(--color-border);
+      background: var(--color-surface-offset);
       box-shadow: var(--shadow-lg);
     }
   }
@@ -188,13 +198,14 @@
     height: auto;
     display: block;
     object-fit: cover;
+    outline: none;
   }
 
   &__showcase-caption {
     font-family: var(--font-body);
-    font-size: var(--text-sm);
+    font-size: var(--text-base);
     color: var(--color-text-muted);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   // ── Callout ──────────────────────────────────────
@@ -222,14 +233,4 @@
       font-size: var(--text-2xl);
     }
   }
-  &__showcase-img-wrap,
-  &__showcase-img {
-    outline: none;
-    border: none;
-
-    &:focus,
-    &:focus-visible {
-      outline: none;
-    }
-}
 }

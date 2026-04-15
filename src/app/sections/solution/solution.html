@@ -30,51 +30,52 @@
       }
     </div>
 
-    <!-- Product showcase -->
-    <div class="solution__showcase" #revealEl>
-
-      <!-- Device -->
-      <div class="solution__showcase-device">
+    <!-- Product showcase — HW: text vľavo, obrázok vpravo -->
+    <div class="solution__showcase solution__showcase--hw" #revealEl>
+      <div class="solution__showcase-text">
         <div class="solution__showcase-label">Hardvér</div>
-        <div class="solution__showcase-img-wrap">
-          <img
-            src="assets/images/sensor-device.jpg"
-            alt="FloodWatch SK zariadenie"
-            width="600"
-            height="400"
-            loading="lazy"
-            decoding="async"
-            class="solution__showcase-img"
-          />
-        </div>
+        <h3 class="solution__showcase-heading">Senzor priamo na mieste</h3>
         <p class="solution__showcase-caption">
           Kompaktné zariadenie s ultrazvukovým senzorom.
           Jednoduchá montáž, nezávislý zdroj napájania,
           odolné voči prírodným živlom.
         </p>
       </div>
+      <div class="solution__showcase-img-wrap">
+        <img
+          src="images/sensor-device.jpg"
+          alt="FloodWatch SK zariadenie"
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
+          class="solution__showcase-img"
+        />
+      </div>
+    </div>
 
-      <!-- Dashboard -->
-      <div class="solution__showcase-dashboard">
+    <!-- Product showcase — SW: obrázok vľavo, text vpravo -->
+    <div class="solution__showcase solution__showcase--sw" #revealEl>
+      <div class="solution__showcase-img-wrap solution__showcase-img-wrap--screen">
+        <img
+          src="images/dashboard-screenshot.jpg"
+          alt="FloodWatch SK dashboard — graf histórie hladiny vody s varovnými hladinami"
+          width="860"
+          height="520"
+          loading="lazy"
+          decoding="async"
+          class="solution__showcase-img"
+        />
+      </div>
+      <div class="solution__showcase-text">
         <div class="solution__showcase-label">Softvér</div>
-        <div class="solution__showcase-img-wrap solution__showcase-img-wrap--screen">
-          <img
-            src="assets/images/dashboard-screenshot.jpg"
-            alt="FloodWatch SK dashboard — graf histórie hladiny vody s varovnými hladinami"
-            width="860"
-            height="520"
-            loading="lazy"
-            decoding="async"
-            class="solution__showcase-img"
-          />
-        </div>
+        <h3 class="solution__showcase-heading">Dashboard v reálnom čase</h3>
         <p class="solution__showcase-caption">
           Reálne dáta. Prehladný dashboard s grafom histórie,
           aktuálnou hodnotou a nastaviteľnými prahovými hladinami
           pre varovanie aj alert.
         </p>
       </div>
-
     </div>
 
     <!-- Differentiator callout -->
