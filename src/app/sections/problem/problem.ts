@@ -17,7 +17,7 @@ export class Problem implements OnInit {
       sublabel: 'len v 2. polroku 2024'
     },
     {
-      value: '>19,5M€',
+      value: '19,5M milióna eur',
       label: 'celkové náklady štátu\nna povodne',
       sublabel: 'škody + záchranné práce 2024'
     },
