@@ -43,10 +43,8 @@ export class Navbar {
   }
 
   navLinks = [
-    { label: 'Probl\u00e9m', anchor: '#problem' },
-    { label: 'Rie\u0161enie', anchor: '#solution' },
-    { label: 'Funkcie', anchor: '#features' },
-    { label: 'Pilot', anchor: '#pilot' },
+    { label: 'Problém', anchor: '#problem' },
+    { label: 'Riešenie & funkcie', anchor: '#solution' },
     { label: 'Kontakt', anchor: '#contact' },
   ];
 }
