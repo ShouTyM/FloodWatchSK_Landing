@@ -1,5 +1,6 @@
-import { Component, HostListener, signal } from '@angular/core';
+import { Component, HostListener, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './navbar.scss'
 })
 export class Navbar {
+  private analytics = inject(AnalyticsService);
+
   isDark = signal(false);
   isScrolled = signal(false);
   isMobileMenuOpen = signal(false);
@@ -39,6 +42,11 @@ export class Navbar {
 
   scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.closeMobileMenu();
+  }
+
+  onContactClick() {
+    this.analytics.trackEvent('cta_click', { label: 'kontaktuj-nas', section: 'navbar' });
     this.closeMobileMenu();
   }
 
