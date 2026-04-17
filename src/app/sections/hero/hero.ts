@@ -1,5 +1,6 @@
-import { Component, signal, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-hero',
@@ -8,9 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './hero.scss',
 })
 export class Hero implements OnInit, OnDestroy {
+  private analytics = inject(AnalyticsService);
+
   readonly stats = [
-    { value: 42, suffix: '%', label: 'obcí so stredným až vysokým rizikom povodní', static: false },
-    { value: 64, suffix: 'M€', label: 'škôd z povodní za roky 2020 – 2024', static: false },
+    { value: 42, suffix: '%', label: 'obcí so stredným až vysokým rizikom povodňí', static: false },
+    { value: 64, suffix: 'M€', label: 'škôd z povodňí za roky 2020 – 2024', static: false },
     { value: 0, suffix: '24/7', label: 'monitorovanie v reálnom čase', static: true },
   ];
 
@@ -23,6 +26,10 @@ export class Hero implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     if (this.animationFrame) cancelAnimationFrame(this.animationFrame);
+  }
+
+  onCtaClick(label: string): void {
+    this.analytics.trackEvent('cta_click', { label, section: 'hero' });
   }
 
   private animateStats() {

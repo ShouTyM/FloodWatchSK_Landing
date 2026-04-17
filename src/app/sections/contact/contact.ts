@@ -1,5 +1,6 @@
-import { Component, signal, ElementRef, QueryList, ViewChildren, AfterViewInit } from '@angular/core';
+import { Component, signal, ElementRef, QueryList, ViewChildren, AfterViewInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalyticsService } from '../../services/analytics.service';
 
 @Component({
   selector: 'app-contact',
@@ -8,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrl: './contact.scss'
 })
 export class Contact implements AfterViewInit {
+  private analytics = inject(AnalyticsService);
+
   @ViewChildren('revealEl') revealEls!: QueryList<ElementRef>;
 
   submitState = signal<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -32,6 +35,8 @@ export class Contact implements AfterViewInit {
     const form = event.target as HTMLFormElement;
     this.submitState.set('loading');
 
+    this.analytics.trackEvent('contact_form_submit', { section: 'contact' });
+
     try {
       const response = await fetch('https://formspree.io/f/xdayejnb', {
         method: 'POST',
@@ -42,6 +47,7 @@ export class Contact implements AfterViewInit {
       if (response.ok) {
         this.submitState.set('success');
         form.reset();
+        this.analytics.trackEvent('contact_form_success', { section: 'contact' });
       } else {
         this.submitState.set('error');
       }
