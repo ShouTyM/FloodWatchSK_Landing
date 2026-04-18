@@ -1,9 +1,0 @@
-RewriteEngine On
-RewriteBase /
-
-# Ak subor alebo priecinok existuje fyzicky, posli ho priamo
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-
-# Vsetko ostatne presmeruj na index.html
-RewriteRule ^ index.html [L]
