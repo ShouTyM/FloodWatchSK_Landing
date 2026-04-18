@@ -1,1 +1,1 @@
-ng build --base-href "https://shoutym.github.io/FloodWatchSK_Landing/" && npx angular-cli-ghpages --dir=dist/floodwatch-sk-landing/browser
+ng build --base-href "/" && npx angular-cli-ghpages --dir=dist/floodwatch-sk-landing/browser
